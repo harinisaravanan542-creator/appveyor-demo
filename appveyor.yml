@@ -1,9 +1,15 @@
-version: 1.0.{build}
+# appveyor.yml configuration
+image: Visual Studio 2022 # The environment where the build runs
 
-build_script:
-  - echo Building project...
+# What happens before the build (e.g., restoring dependencies)
+before_build:
+  - nuget restore
 
-test_script:
-  - echo Running tests...
+# The actual build command
+build:
+  project: YourProjectName.sln # Replace with your actual solution/project file
+  verbosity: minimal
 
-deploy: off
+# Post-build actions
+after_build:
+  - echo "Build completed successfully!"
