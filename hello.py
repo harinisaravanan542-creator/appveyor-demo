@@ -1,1 +1,1 @@
-print("Hello from AppVeyor CI/CD")
+print("Build triggered now")
